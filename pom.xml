@@ -19,7 +19,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src\test\java\resources\Suite.xml</suiteXmlFile>
+                        <suiteXmlFile>src\main\resources\Suite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

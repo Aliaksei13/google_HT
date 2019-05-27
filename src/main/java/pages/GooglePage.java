@@ -3,7 +3,7 @@ package main.java.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MainPage {
+public class GooglePage {
     @FindBy(name = "q")
     private WebElement searchField;
 

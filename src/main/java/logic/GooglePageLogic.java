@@ -1,15 +1,15 @@
 package main.java.logic;
 
 import main.java.driver.Wait;
-import main.java.pages.MainPage;
+import main.java.pages.GooglePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class MainPageLogic extends MainPage {
+public class GooglePageLogic extends GooglePage {
 
     private WebDriver driver;
 
-    public MainPageLogic(WebDriver driver) {
+    public GooglePageLogic(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

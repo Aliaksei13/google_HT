@@ -2,7 +2,7 @@ package test.java;
 
 import main.java.driver.PropertyManager;
 import main.java.driver.SingletonWebDriver;
-import main.java.logic.MainPageLogic;
+import main.java.logic.GooglePageLogic;
 import main.java.logic.ResultPageLogic;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class GoogleSearchTest {
-    private MainPageLogic mainPage;
+    private GooglePageLogic googlePage;
     private SingletonWebDriver singletonWebDriver = SingletonWebDriver.getInstance();
     private PropertyManager propertyManager = new PropertyManager();
 
@@ -18,7 +18,7 @@ public class GoogleSearchTest {
     public void setUp(){
         singletonWebDriver.initialize();
         singletonWebDriver.openURL(propertyManager.getPropertyValue("google"));
-        mainPage = new MainPageLogic(singletonWebDriver.getDriver());
+        googlePage = new GooglePageLogic(singletonWebDriver.getDriver());
     }
 
     @AfterClass
@@ -28,7 +28,7 @@ public class GoogleSearchTest {
 
     @Test
     public void searchAndOpenWebSite(){
-        ResultPageLogic resultPage = mainPage.search("Test");
+        ResultPageLogic resultPage = googlePage.search("Test");
         resultPage.openWebSiteInTheList(1);
         Assert.assertTrue(singletonWebDriver.getDriver().getCurrentUrl().contains("test"),
                 "Test is not contain in URL");
